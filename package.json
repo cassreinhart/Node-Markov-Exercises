@@ -1,0 +1,19 @@
+{
+  "name": "markov",
+  "version": "1.0.0",
+  "description": "",
+  "main": "makeText.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cassreinhart/Node-Markov-Exercises.git"
+  },
+  "author": "Cassandra Reinhart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cassreinhart/Node-Markov-Exercises/issues"
+  },
+  "homepage": "https://github.com/cassreinhart/Node-Markov-Exercises#readme"
+}
