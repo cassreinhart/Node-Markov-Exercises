@@ -19,11 +19,14 @@ class MarkovMachine {
   makeChains() {
     let chains = {};
 
-    for (let word of words) {
-      if (!Object.keys(chains).indexOf(word)) {
-        chains[word] = Array.from(words[words.indexOf(word) + 1]);
+    for (let i = 0; i< this.words.length; i++) {
+      let word = this.words[i];
+      let nextWord = this.words[i + 1] || null;
+
+      if (Object.keys(chains).indexOf(word) === -1) {
+        chains[word] = [...nextWord];
       } else {
-        chains[word].push(words[words.indexOf(word) + 1])
+        chains[word].push(nextWord);
       }
     }
     return chains;
@@ -47,3 +50,5 @@ class MarkovMachine {
     return text;
   }
 }
+
+
