@@ -29,26 +29,28 @@ class MarkovMachine {
         chains[word].push(nextWord);
       }
     }
-    return chains;
+    this.chains = chains;
   }
 
 
   /** return random text from chains */
+  static random(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  } 
 
   makeText(numWords = 100) {
-    let text = '';
-    for (let i = 1; i <= numWords; i++) {
-      
-      if (text.length > 0) {
-        let randomWordIdx = Math.floor(Math.random() * chains.length + 1)
-        text+= Object.keys(chains)[randomWordIdx];
-      } else {
-        let randomChainIdx = Math.floor(Math.random() * chains[i].length + 1) //this won't work
-        text+= chains[Object.keys(chains)]
-      }
+    let text = [];
+    let keys = [...this.chains.keys()];
+    let key = MarkovMachine.choice(keys);
+
+    while (text < numWords && key !== null) {
+      text.push(key)
+      key = MarkovMachine.choice(this.chains[key])
     }
-    return text;
+    return text.join(" ");
   }
 }
 
-
+module.exports = {
+  MarkovMachine,
+}
