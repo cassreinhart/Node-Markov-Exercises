@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/cassreinhart/Node-Markov-Exercises/issues"
   },
-  "homepage": "https://github.com/cassreinhart/Node-Markov-Exercises#readme"
+  "homepage": "https://github.com/cassreinhart/Node-Markov-Exercises#readme",
+  "dependencies": {
+    "axios": "^1.2.3"
+  },
+  "type": "module"
 }

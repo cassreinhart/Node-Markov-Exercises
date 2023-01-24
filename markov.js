@@ -6,7 +6,7 @@ class MarkovMachine {
   /** build markov machine; read in text.*/
 
   constructor(text) {
-    let words = text.split(/[ \r\n]+/);
+    let words = text.split(/[ \r\n]+/); //use regular expression tester
     this.words = words.filter(c => c !== "");
     this.makeChains();
   }
@@ -41,11 +41,11 @@ class MarkovMachine {
   makeText(numWords = 100) {
     let text = [];
     let keys = [...this.chains.keys()];
-    let key = MarkovMachine.choice(keys);
+    let key = MarkovMachine.random(keys);
 
     while (text < numWords && key !== null) {
       text.push(key)
-      key = MarkovMachine.choice(this.chains[key])
+      key = MarkovMachine.random(this.chains[key])
     }
     return text.join(" ");
   }

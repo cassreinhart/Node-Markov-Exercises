@@ -18,7 +18,6 @@ describe("makeText", () => {
     beforeEach(() => {
         let origStr = "the cat in the hat";
         let mm = new MarkovMachine(origStr);
-        let uniqueWordsCount = new Set(origStr.split(' ')).size;
     })
     test("generates a string", () => {
         expect(mm.makeText(numWords = 10)).toBe("String")

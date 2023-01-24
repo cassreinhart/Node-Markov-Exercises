@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 import axios from 'axios';
-const markov = require('./markov');
+import markov from './markov';
 import process from 'process';
 
 
